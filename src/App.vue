@@ -1,17 +1,63 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="columns">
+      <div class="column is-one-third is-offset-4">
+        <h1 class="title has-text-info has-text-centered is-light">
+          ระบบพิมพ์ใบประกาศนียบัตรเข้าร่วมงาน LA Forum 2021
+        </h1>
+        <h1 class="subtitle has-text-centered has-text-danger">
+          สภาเทคนิคการแพทย์
+        </h1>
+        <b-field label="หมายเลข ท.น.">
+          <b-input v-model="license"></b-input>
+        </b-field>
+        <b-field>
+          <b-button type="is-primary" @click="generate">
+            Create
+          </b-button>
+        </b-field>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import pdfMake from "pdfmake/build/pdfmake";
+import pdfFonts from "pdfmake/build/vfs_fonts";
+pdfMake.vfs = pdfFonts.pdfMake.vfs;
+
+pdfMake.fonts = {
+  Sarabun: {
+    normal: 'Sarabun-Regular.ttf',
+    bold: 'Sarabun-Bold.ttf',
+    italics: 'Sarabun-Italic.ttf',
+    bolditalics: 'Sarabun-BoldItalic.ttf'
+  }
+}
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+  },
+  data () {
+    return {
+      license: null,
+      docDefinition: {
+        content: [
+          {
+            text: 'ประกาศนียบัตรเข้าร่วมงานประชุมวิชาการ', fontSize: 21
+          }
+        ],
+        defaultStyle: {
+          font: 'Sarabun'
+        }
+      }
+    }
+  },
+  methods: {
+    generate () {
+      pdfMake.createPdf(this.docDefinition).open()
+    }
   }
 }
 </script>
