@@ -3,14 +3,20 @@
   <div class="container">
       <div class="columns">
         <div class="column">
+          <img src="./assets/logo.jpg" width="150">
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column">
+          <h1 class="title has-text-info has-text-centered is-light">
+            ระบบพิมพ์ใบเกียรติบัตรสำหรับผู้เข้าร่วมอบรมทางไกล เรื่อง เลิกบุหรี่ ดีอย่างไร
+          </h1>
+          <h1 class="subtitle has-text-info">สภาเทคนิคการแพทย์</h1>
         </div>
       </div>
       <div class="columns">
         <div class="column is-one-third is-offset-4">
-          <h1 class="title has-text-info has-text-centered is-light">
-            ระบบพิมพ์ใบเกียรติบัตรสำหรับผู้เข้าร่วมงาน LA Forum 2021
-          </h1>
-          <b-field label="คำนำหน้า">
+          <b-field label="คำนำหน้า" message="คำนำหน้าจะปรากฎบนใบประกาศตามที่ท่านกำหนด">
             <b-input v-model="title"></b-input>
           </b-field>
           <b-field label="ชื่อ">
@@ -26,6 +32,13 @@
               </b-button>
             </div>
           </b-field>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column">
+          <p class="notification is-warning">
+          หากไม่พบรายชื่อ กรุณาติดต่อสภาเทคนิคการแพทย์ที่ไลน์ @mtcouncil2547
+          </p>
         </div>
       </div>
     </div>
@@ -54,15 +67,15 @@ export default {
   },
   data () {
     return {
-      firstname: 'ลิขิต',
-      lastname: 'ปรียานนท์',
+      firstname: '',
+      lastname: '',
       license: '',
       title: '',
     }
   },
   computed: {
     fullname () {
-      return this.title + " " + this.firstname + " " + this.lastname
+      return this.title + this.firstname + " " + this.lastname
     },
     isFormNotValid () {
       return this.firstname === '' || this.lastname === ''
