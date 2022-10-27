@@ -19,7 +19,7 @@
           <b-field label="คำนำหน้า" message="คำนำหน้าจะปรากฎบนใบประกาศตามที่ท่านกำหนด">
             <b-input v-model="title"></b-input>
           </b-field>
-          <b-field label="ชื่อ">
+          <b-field label="ชื่อ" message="กรุณาพิมพ์ชื่อให้ถูกต้องโดยไม่มีช่องว่างต่อท้าย">
             <b-input v-model="firstname"></b-input>
           </b-field>
           <b-field label="นามสกุล">
@@ -37,7 +37,7 @@
       <div class="columns">
         <div class="column">
           <p class="notification is-warning">
-          หากไม่พบรายชื่อ กรุณาติดต่อที่
+            หากไม่พบรายชื่อ กรุณาติดต่อที่ Line: <strong>nananew451218</strong>
           </p>
         </div>
       </div>
