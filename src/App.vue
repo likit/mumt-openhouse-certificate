@@ -53,11 +53,11 @@ import { query, where, collection, getDocs } from 'firebase/firestore'
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 pdfMake.fonts = {
-  Sarabun: {
-    normal: 'THSarabunNew.ttf',
-    bold: 'THSarabunNew Bold.ttf',
-    italics: 'THSarabunNew Italic.ttf',
-    bolditalics: 'THSarabunNew BoldItalic.ttf'
+  Fahkwang: {
+    normal: 'Fahkwang-Regular.ttf',
+    bold: 'Fahkwang-Bold.ttf',
+    italics: 'Fahkwang-Italic.ttf',
+    bolditalics: 'Fahkwang-BoldItalic.ttf'
   }
 }
 
@@ -150,11 +150,11 @@ export default {
             }
           ],
               defaultStyle: {
-            font: 'Sarabun'
+            font: 'Fahkwang'
           },
           pageSize: "A4",
-              pageOrientation: "landscape",
-          pageMargins: [30, 20, 30, 30]
+          pageOrientation: "landscape",
+          pageMargins: [30, 20, 30, 30],
         }
       pdfMake.createPdf(docDefinition).open()
     }
