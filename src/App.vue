@@ -15,6 +15,13 @@
         </div>
       </div>
       <div class="columns">
+        <div class="column">
+          <span class="notification is-success is-light">
+            หากไม่สามารถโหลดใบประกาศณียบัตรได้จากโทรศัพท์มือถือหรือ tablet กรุณาเปิดระบบจากเครื่องคอมพิวเตอร์
+          </span>
+        </div>
+      </div>
+      <div class="columns">
         <div class="column is-one-third is-offset-4">
           <b-field label="คำนำหน้า" message="คำนำหน้าจะปรากฎบนใบประกาศตามที่ท่านกำหนด">
             <b-input v-model="title"></b-input>
