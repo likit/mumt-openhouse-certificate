@@ -119,7 +119,7 @@ export default {
             },
           ]
         }
-      pdfMake.createPdf(docDefinition).open()
+      pdfMake.createPdf(docDefinition).download()
     }
   }
 }
